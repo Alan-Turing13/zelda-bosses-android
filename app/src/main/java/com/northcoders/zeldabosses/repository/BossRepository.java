@@ -35,13 +35,13 @@ public class BossRepository {
             public void onResponse(Call<JsonBossesObject> call, Response<JsonBossesObject> response) {
                 BossService bossService = new BossService();
                 bossList = bossService.mapJsonToBossList(response.body());
-                Log.i(String.valueOf(BossRepository.class), "Getting boss list from BossService");
+                Log.d(String.valueOf(BossRepository.class), "Getting boss list from BossService");
                 mutableLiveData.setValue(bossList);
             }
 
             @Override
             public void onFailure(Call<JsonBossesObject> call, Throwable t) {
-                Log.i("HTTP Failure getting bosses", t.getMessage());
+                Log.e("HTTP Failure getting bosses", t.getMessage());
             }
         });
         return mutableLiveData;

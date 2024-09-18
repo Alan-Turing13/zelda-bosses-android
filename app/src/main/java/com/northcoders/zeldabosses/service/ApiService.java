@@ -9,6 +9,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface ApiService {
 
@@ -17,5 +18,5 @@ public interface ApiService {
 
     // ❓ is this the correct way to pass in a path variable to Retrofit @GET annotation
     @GET("api/dungeons/{dungeonId}")
-    Call<JsonDungeonObject> getDungeon(String dungeonId);
+    Call<JsonDungeonObject> getDungeon(@Path("dungeonId") String dungeonId);
 }

@@ -1,5 +1,7 @@
 package com.northcoders.zeldabosses.service;
 
+import android.util.Log;
+
 import com.northcoders.zeldabosses.dao.JsonBossesObject;
 import com.northcoders.zeldabosses.model.Boss;
 import com.northcoders.zeldabosses.model.BossRecord;
@@ -24,6 +26,7 @@ public class BossService {
                 )
             );
         }
+        Log.d("BossService", "mapJsonToBossList() came back size ".concat(String.valueOf(bosses.size())));
         return bosses;
     }
 }

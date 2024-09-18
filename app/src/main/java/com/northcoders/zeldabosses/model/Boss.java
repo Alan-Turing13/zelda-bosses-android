@@ -1,7 +1,16 @@
 package com.northcoders.zeldabosses.model;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.widget.ImageView;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
+
+import com.northcoders.zeldabosses.R;
+import com.squareup.picasso.Picasso;
 
 public class Boss extends BaseObservable {
     private long id;
@@ -16,6 +25,7 @@ public class Boss extends BaseObservable {
         this.dungeons = dungeons;
         this.description = description;
         this.image_url = name.toLowerCase().replaceAll(" ", "_");
+        Log.d("Boss"+ this.name + " has image url ", image_url);
     }
 
     public Boss() {
